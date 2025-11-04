@@ -8,9 +8,6 @@ const streams = [
   { id: 1, name: "Stream Principal 1", type: "HD", status: "live", image: streamFootball },
   { id: 2, name: "Stream Principal 2", type: "4K", status: "live", image: streamBasketball },
   { id: 3, name: "Stream Principal 3", type: "HD", status: "live", image: streamTennis },
-  { id: 4, name: "Stream Principal 4", type: "HD", status: "standby", image: streamFootball },
-  { id: 5, name: "Stream Principal 5", type: "4K", status: "live", image: streamBasketball },
-  { id: 6, name: "Stream Principal 6", type: "HD", status: "live", image: streamTennis },
 ];
 
 const StreamsSection = () => {
@@ -21,7 +18,7 @@ const StreamsSection = () => {
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             <span className="text-foreground">Streams </span>
-            <span className="bg-clip-text text-transparent gradient-primary">Principaux</span>
+            <span className="text-primary">Principaux</span>
           </h2>
           <p className="text-foreground/60 text-base sm:text-lg">
             Accédez instantanément aux flux de diffusion en direct. Qualité optimale garantie.
@@ -58,7 +55,7 @@ const StreamsSection = () => {
 
                 {/* Meta Info */}
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="px-2 py-1 rounded text-xs font-medium bg-primary/20 text-primary">
+                  <span className="px-2 py-1 rounded text-xs font-medium border border-primary/30 text-primary">
                     {stream.type}
                   </span>
                   <span
