@@ -1,13 +1,16 @@
 import { Card } from "@/components/ui/card";
 import { ExternalLink, Tv2 } from "lucide-react";
+import streamFootball from "@/assets/stream-football.jpg";
+import streamBasketball from "@/assets/stream-basketball.jpg";
+import streamTennis from "@/assets/stream-tennis.jpg";
 
 const streams = [
-  { id: 1, name: "Stream Principal 1", type: "HD", status: "live" },
-  { id: 2, name: "Stream Principal 2", type: "4K", status: "live" },
-  { id: 3, name: "Stream Principal 3", type: "HD", status: "live" },
-  { id: 4, name: "Stream Principal 4", type: "HD", status: "standby" },
-  { id: 5, name: "Stream Principal 5", type: "4K", status: "live" },
-  { id: 6, name: "Stream Principal 6", type: "HD", status: "live" },
+  { id: 1, name: "Stream Principal 1", type: "HD", status: "live", image: streamFootball },
+  { id: 2, name: "Stream Principal 2", type: "4K", status: "live", image: streamBasketball },
+  { id: 3, name: "Stream Principal 3", type: "HD", status: "live", image: streamTennis },
+  { id: 4, name: "Stream Principal 4", type: "HD", status: "standby", image: streamFootball },
+  { id: 5, name: "Stream Principal 5", type: "4K", status: "live", image: streamBasketball },
+  { id: 6, name: "Stream Principal 6", type: "HD", status: "live", image: streamTennis },
 ];
 
 const StreamsSection = () => {
@@ -32,8 +35,15 @@ const StreamsSection = () => {
               key={stream.id}
               className="group relative bg-card border-border hover:border-primary/50 transition-smooth hover-lift cursor-pointer overflow-hidden"
             >
-              {/* Gradient Overlay on Hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-smooth"></div>
+              {/* Background image */}
+              <div className="absolute inset-0">
+                <img 
+                  src={stream.image} 
+                  alt={stream.name}
+                  className="w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-smooth"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/40"></div>
+              </div>
 
               <div className="relative p-6 sm:p-8">
                 {/* Icon */}

@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Play, Zap } from "lucide-react";
+import heroSports from "@/assets/hero-sports.jpg";
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -11,9 +12,19 @@ const Hero = () => {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0 gradient-hero opacity-90"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(14,165,233,0.1),transparent_50%)]"></div>
+      {/* Hero background image */}
+      <div className="absolute inset-0">
+        <img 
+          src={heroSports} 
+          alt="Sports streaming avec stars et logos de chaînes" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-background/70"></div>
+      </div>
+      
+      {/* Animated gradient overlay */}
+      <div className="absolute inset-0 gradient-hero opacity-40"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(14,165,233,0.15),transparent_50%)]"></div>
       
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
